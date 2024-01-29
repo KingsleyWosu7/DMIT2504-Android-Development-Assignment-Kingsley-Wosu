@@ -17,7 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // first level widget of Material Design
       home: Scaffold(
+        // default route
         backgroundColor: Colors.blueGrey,
         appBar: AppBar(
           title: const Text("App1 - UI Layout"),
@@ -27,13 +29,20 @@ class MyApp extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
+            //TODO: Put your code here to complete this app.
             Expanded(
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(0.0),
                     child: Container(
-                      color: Colors.orange,
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                        border: Border.all(
+                          color: Colors.black,
+                          width: 3.0,
+                        ),
+                      ),
                       height: 100,
                       width: 100,
                       child: const Center(
@@ -45,7 +54,7 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                   Transform.rotate(
-                    angle: 0.785398, 
+                    angle: 0.785398,
                     child: Container(
                       color: Colors.white,
                       height: 100,
@@ -63,22 +72,29 @@ class MyApp extends StatelessWidget {
             ),
             Column(
               children: <Widget>[
-                Container(
-                  color: Colors.yellow,
-                  height: 300,
-                  width: 100,
-                  child: const Center(
-                    child: Text(
-                      'Container 3',
-                      style: TextStyle(color: Colors.black),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Container(
+                    color: Colors.yellow,
+                    height: 300,
+                    width: 100,
+                    child: const Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Text(
+                        'Container 3',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                   ),
                 ),
-                Expanded(
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
                   child: Container(
                     color: Colors.lightBlue,
+                    height: 300,
                     width: 100,
-                    child: const Center(
+                    child: const Align(
+                      alignment: Alignment.centerRight,
                       child: Text(
                         'Container 4',
                         style: TextStyle(color: Colors.black),
@@ -90,29 +106,46 @@ class MyApp extends StatelessWidget {
             ),
             Expanded(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'Container 5',
-                        style: TextStyle(color: Colors.white),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 180.0),
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        color: Colors.black,
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: Colors.white,
+                          width: 3.0,
+                        ),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'Container 5',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Container(
-                      color: Colors.red,
-                      child: const Center(
-                        child: Text(
-                          'Con 6',
-                          style: TextStyle(color: Colors.black),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 150.0),
+                    child: Align(
+                      alignment: const Alignment(0.2, 1.0),
+                      child: Container(
+                        color: Colors.red,
+                        height: 220,
+                        width: 100,
+                        child: const Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            'Con 6',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 30.0,
+                            ),
+                          ),
                         ),
                       ),
                     ),
